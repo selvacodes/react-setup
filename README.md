@@ -14,9 +14,10 @@ Uses Express for server
  - Git hooks configured with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
  - [Styled components](https://github.com/styled-components/styled-components) are used for CSS-in-js
  - Has pre-commit git hook which prevents you to check in bad code
+ 
 [Preferred Style Guide](https://gist.github.com/selvacodes/2ccdaac52fefa9db1b484c7fa1da9e97)
 
-** Scripts	**
+**Scripts**
 
 ``` js
 
