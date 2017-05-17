@@ -54,6 +54,7 @@
     "fix": "yarn run format && yarn run fix-lint",
     "build": "webpack --watch",
     "precommit": "lint-staged",
+    "type": "flow",
     "lint-staged": "lint-staged"
   },
   "babel": {

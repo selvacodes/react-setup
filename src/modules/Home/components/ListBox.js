@@ -1,8 +1,9 @@
 // @flow
 
-import React from 'react'
+import React, { Component } from 'react'
 import List from './List'
 import styled from 'styled-components'
+import type { listBox } from '../model'
 
 const FormWrapper = styled.div`
     margin: 0px auto;
@@ -29,18 +30,18 @@ const Input = styled.input`
   transition: border 0.3s;
 `
 
-export default class ListBox extends React.PureComponent {
+export default class ListBox extends Component<void, any, listBox> {
   state = {
     newItem: '',
     items: []
   };
 
-  _handleOnChange = event => {
-    const typedText = event.target.value
+  _handleOnChange = (event: Event & { currentTarget: HTMLInputElement }) => {
+    const typedText = event.currentTarget.value
     this.setState({ newItem: typedText })
   };
 
-  _handleOkClick = _ => {
+  _handleOkClick = () => {
     const { newItem, items } = this.state
     const addedItems = [
       ...items,

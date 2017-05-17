@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react'
 import styled from 'styled-components'
 import type { item, list } from '../model'
@@ -26,7 +27,7 @@ const Item = ({ id, text }: item) => <SyledLi> {text} </SyledLi>
 const List = ({ items }: list) => (
   <ListWrapper>
     <StyledUl>
-      {items.map(item => <Item key={item.id} text={item.text} />)}
+      {items.map(item => <Item key={item.id} {...item} />)}
     </StyledUl>
   </ListWrapper>
 )
