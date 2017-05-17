@@ -33,12 +33,12 @@ export default class ListBox extends React.PureComponent {
   state = {
     newItem: '',
     items: []
-  }
+  };
 
   _handleOnChange = event => {
     const typedText = event.target.value
     this.setState({ newItem: typedText })
-  }
+  };
 
   _handleOkClick = _ => {
     const { newItem, items } = this.state
@@ -50,7 +50,7 @@ export default class ListBox extends React.PureComponent {
       }
     ]
     this.setState({ newItem: '', items: addedItems })
-  }
+  };
 
   render () {
     return (
