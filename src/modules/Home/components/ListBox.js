@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import List from './List'
 import styled from 'styled-components'
 import type { listBox } from '../model'
@@ -30,7 +30,7 @@ const Input = styled.input`
   transition: border 0.3s;
 `
 
-export default class ListBox extends Component<void, any, listBox> {
+export default class ListBox extends PureComponent<void, any, listBox> {
   state = {
     newItem: '',
     items: []
@@ -41,7 +41,7 @@ export default class ListBox extends Component<void, any, listBox> {
     this.setState({ newItem: typedText })
   };
 
-  _handleOkClick = () => {
+  _handleOkClick = (_: Event) => {
     const { newItem, items } = this.state
     const addedItems = [
       ...items,

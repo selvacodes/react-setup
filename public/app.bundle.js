@@ -17614,6 +17614,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _templateObject = _taggedTemplateLiteral(['\n    margin: 0px auto;\n    width: 50%;\n    border: #2E3440;\n    padding: 10px;\n    height: 250px;\n    background-color: #D8DEE9;\n'], ['\n    margin: 0px auto;\n    width: 50%;\n    border: #2E3440;\n    padding: 10px;\n    height: 250px;\n    background-color: #D8DEE9;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    margin-top: 0;\n    margin-bottom: 10px;\n    list-style-type: none;\n    margin-left: 50px;\n'], ['\n    margin-top: 0;\n    margin-bottom: 10px;\n    list-style-type: none;\n    margin-left: 50px;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n    font-size: 20px;\n    color: #2E3440;\n'], ['\n    font-size: 20px;\n    color: #2E3440;\n']);
@@ -17654,7 +17656,7 @@ var List = function List(_ref2) {
             StyledUl,
             null,
             items.map(function (item) {
-                return _react2.default.createElement(Item, { key: item.id, text: item.text });
+                return _react2.default.createElement(Item, _extends({ key: item.id }, item));
             })
         )
     );
@@ -17707,8 +17709,8 @@ var FormWrapper = _styledComponents2.default.div(_templateObject);
 var Button = _styledComponents2.default.button(_templateObject2);
 var Input = _styledComponents2.default.input(_templateObject3);
 
-var ListBox = function (_React$PureComponent) {
-  _inherits(ListBox, _React$PureComponent);
+var ListBox = function (_PureComponent) {
+  _inherits(ListBox, _PureComponent);
 
   function ListBox() {
     var _ref;
@@ -17725,7 +17727,7 @@ var ListBox = function (_React$PureComponent) {
       newItem: '',
       items: []
     }, _this._handleOnChange = function (event) {
-      var typedText = event.target.value;
+      var typedText = event.currentTarget.value;
       _this.setState({ newItem: typedText });
     }, _this._handleOkClick = function (_) {
       var _this$state = _this.state,
@@ -17770,7 +17772,7 @@ var ListBox = function (_React$PureComponent) {
   }]);
 
   return ListBox;
-}(_react2.default.PureComponent);
+}(_react.PureComponent);
 
 exports.default = ListBox;
 

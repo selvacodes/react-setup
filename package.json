@@ -45,17 +45,18 @@
     "webpack": "^2.5.0"
   },
   "scripts": {
-    "start": "node server",
+    "prettier-write": "prettier --write --no-semi --single-quote  \"./src/**/*.js\"",
+    "format": "yarn run prettier-write",
     "format-config": "prettier --write --no-semi *.js",
     "lint": "eslint \"./src/**/*.js\"",
-    "prettier-write": "prettier --write --no-semi --single-quote  \"./src/**/*.js\"",
     "fix-lint": "eslint --fix \"./src/**/*.js\"",
-    "format": "yarn run prettier-write",
+    "lint-strict": "yarn run format && yarn run fix-lint && yarn run flow-status",
     "fix": "yarn run format && yarn run fix-lint",
+    "flow-status": "flow status",
+    "start": "node server",
     "build": "webpack --watch",
-    "precommit": "lint-staged",
-    "type": "flow",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "precommit": "lint-staged"
   },
   "babel": {
     "presets": [
