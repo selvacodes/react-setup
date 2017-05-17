@@ -13,7 +13,7 @@ Uses Express for server
  - [Prettier](https://github.com/prettier/prettier) configured for formatting
  - Git hooks configured with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
  - [Styled components](https://github.com/styled-components/styled-components) are used for CSS-in-js
-
+ - Has pre-commit git hook which prevents you to check in bad code
 [Preferred Style Guide](https://gist.github.com/selvacodes/2ccdaac52fefa9db1b484c7fa1da9e97)
 
 ** Scripts	**
@@ -31,4 +31,7 @@ yarn run fix // formats and fixes lint
 yarn run lint-strict // formats,fixes lint and type checks
 
 ```
-Has pre-commit git hook which prevents you to check in bad code
+
+Flow plugin for editors : https://flow.org/en/docs/editors/
+
+Styled components editor support : https://github.com/styled-components/styled-components#syntax-highlighting
