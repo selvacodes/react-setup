@@ -14,18 +14,18 @@ module.exports = {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
-      },
+      }, 
       {
         test: /\.css$/,
-        loader: "style-loader"
-      },
-      {
-        test: /\.css$/,
-        loader: "css-loader",
-        query: {
-          modules: true,
-          localIdentName: "[name]__[local]___[hash:base64:5]"
-        }
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          }
+        ]
       }
     ]
   }
